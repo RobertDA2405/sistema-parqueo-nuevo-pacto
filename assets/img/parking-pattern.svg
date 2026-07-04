@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Patron abstracto de parqueo">
+  <rect width="1200" height="900" fill="#14343a"/>
+  <g fill="none" stroke="#f3c76b" stroke-width="5" opacity=".46">
+    <path d="M82 100h270c46 0 84 38 84 84v184c0 46-38 84-84 84H82z"/>
+    <path d="M770 184h330v184H770z"/>
+    <path d="M116 608h420v182H116z"/>
+    <path d="M692 570h324c64 0 116 52 116 116v104H692z"/>
+    <path d="M142 150h128c46 0 82 36 82 80s-36 80-82 80H142z"/>
+    <path d="M826 224h122c42 0 74 32 74 72s-32 72-74 72H826z"/>
+  </g>
+  <g stroke="#dbe8ea" stroke-width="3" opacity=".22">
+    <path d="M0 512h1200"/>
+    <path d="M610 0v900"/>
+    <path d="M0 112h1200"/>
+    <path d="M0 792h1200"/>
+  </g>
+  <g fill="#ffffff" opacity=".08">
+    <circle cx="104" cy="742" r="76"/>
+    <circle cx="1044" cy="154" r="92"/>
+    <circle cx="560" cy="352" r="58"/>
+  </g>
+</svg>
