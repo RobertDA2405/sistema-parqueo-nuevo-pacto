@@ -57,9 +57,15 @@
               <span class="brand-mark">P</span>
               <span>El Nuevo Pacto</span>
             </div>
-            <div class="sidebar-subtitle">${ParkingStore.escapeHtml(user.username)} · ${ParkingStore.escapeHtml(user.role)}</div>
+            <div class="sidebar-user">
+              <div class="sidebar-subtitle">${ParkingStore.escapeHtml(user.username)} · ${ParkingStore.escapeHtml(user.role)}</div>
+              <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
+                <span>Menu</span>
+                <span class="menu-toggle-mark">+</span>
+              </button>
+            </div>
           </div>
-          <nav class="nav-list" aria-label="Menu principal">
+          <nav class="nav-list" id="mainNav" aria-label="Menu principal">
             ${renderNav(user, active)}
           </nav>
         </aside>
@@ -79,6 +85,14 @@
     document.getElementById("logoutButton").addEventListener("click", () => {
       ParkingStore.clearSession();
       window.location.href = "index.html";
+    });
+
+    document.getElementById("menuToggle").addEventListener("click", (event) => {
+      const button = event.currentTarget;
+      const shell = document.querySelector(".app-shell");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      shell.classList.toggle("nav-open", !expanded);
     });
 
     return document.getElementById("pageContent");

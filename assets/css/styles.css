@@ -156,6 +156,31 @@ button {
   font-size: 0.86rem;
 }
 
+.sidebar-user {
+  display: grid;
+  gap: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.menu-toggle-mark {
+  color: #f3c76b;
+  font-weight: 900;
+}
+
 .nav-list {
   display: grid;
   gap: 4px;
@@ -606,18 +631,36 @@ tr:last-child td {
     text-align: right;
   }
 
+  .sidebar-user {
+    justify-items: end;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .nav-list {
-    display: flex;
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
-    overflow-x: auto;
-    padding: 10px 12px 12px;
-    scrollbar-width: thin;
+    max-height: calc(100vh - 74px);
+    overflow: auto;
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .app-shell.nav-open .nav-list {
+    display: grid;
+  }
+
+  .app-shell.nav-open .menu-toggle-mark {
+    transform: rotate(45deg);
   }
 
   .nav-link {
-    flex: 0 0 auto;
-    min-height: 38px;
-    white-space: nowrap;
+    min-height: 46px;
+    background: rgba(255, 255, 255, 0.06);
+    white-space: normal;
   }
 
   .topbar {
@@ -664,6 +707,14 @@ tr:last-child td {
 
   .topbar {
     padding: 12px 14px;
+  }
+
+  .sidebar-header {
+    align-items: center;
+  }
+
+  .nav-list {
+    grid-template-columns: 1fr;
   }
 
   .topbar h1 {
@@ -758,10 +809,6 @@ tr:last-child td {
 }
 
 @media (max-width: 420px) {
-  .sidebar-title span:last-child {
-    display: none;
-  }
-
   .sidebar-subtitle {
     max-width: 190px;
     overflow: hidden;
